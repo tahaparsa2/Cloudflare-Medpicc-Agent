@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audit log</title>
+    <link rel="stylesheet" href="/review.css" />
+  </head>
+  <body class="wide">
+    <header class="top">
+      <p class="eyebrow">Gatekeeper audit log</p>
+      <h1 id="title">Loading the audit log</h1>
+      <p id="subtitle" class="muted"></p>
+    </header>
+    <div class="verifybar">
+      <button id="verify" class="primary" type="button">Verify the chain</button>
+      <p id="verdict" class="verdict muted" role="status">
+        Each row stores the hash of the row before it. Verify recomputes every hash in the gatekeeper.
+      </p>
+    </div>
+    <p id="error" class="error" role="alert" hidden></p>
+    <main id="app" aria-live="polite"></main>
+    <footer class="muted">
+      The gatekeeper writes every row. Rows cannot be updated or deleted through it, and this page can only read them.
+    </footer>
+    <script src="/audit.js" defer></script>
+  </body>
+</html>

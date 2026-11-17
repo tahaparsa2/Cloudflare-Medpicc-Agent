@@ -1,0 +1,66 @@
+{
+  "transcriptId": "call-2",
+  "transcriptHash": "f6ac7b45a903ff5d69b8cb87db71363257b730be2db770827b469d7db366686a",
+  "contextHash": "157c21d2bdb731149af0b12f17ac4d69a30bf145f440f757ee29b85a416fb936",
+  "modelId": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "recordedAt": "2026-11-17T06:41:15.269Z",
+  "output": {
+    "Metrics__c": {
+      "quotes": [
+        "Elena Vasquez: The support deadline in March is real and I do not want trucks idle because of a remote access failure."
+      ],
+      "value": "Trucks idle due to remote access failure"
+    },
+    "Economic_Buyer__c": {
+      "quotes": [
+        "Elena Vasquez: I do. I sign any contract above 50,000 dollars, and this is above that."
+      ],
+      "value": "Elena Vasquez, Chief Financial Officer"
+    },
+    "Decision_Criteria__c": {
+      "quotes": [
+        "Elena Vasquez: Then I think we understand each other. Send me what you promised and we will keep to January.",
+        "Maya Chen: Elena, is there anything about the proposal itself that concerns you?",
+        "Elena Vasquez: Only that I have seen projects like this run over. I want the deployment plan to name who at your company is accountable if a depot is not live by the agreed date."
+      ],
+      "value": "Named delivery lead in the deployment plan and completion by the agreed date"
+    },
+    "Decision_Process__c": {
+      "quotes": [
+        "Elena Vasquez: The board sees anything multi-year, but they approve what I bring them. In practice it is my decision.",
+        "Elena Vasquez: No, and I want to be direct about that. We will not sign in December. Tom's redlines alone take us past the holidays, and the board meets on January 14. Signature will slip to January, realistically the week after that board meeting."
+      ],
+      "value": "Board meeting on January 14, then signature the week after"
+    },
+    "Paper_Process__c": {
+      "quotes": [
+        "Elena Vasquez: There are four steps. First, your team completes our security questionnaire. Marcus owns that and he will not start legal review until it is done. Second, the master agreement goes to Tom Brandt, our General Counsel. He takes two to three weeks for redlines, and he does not move faster for anyone.",
+        "Elena Vasquez: Third, you have to be set up as a vendor in our procurement portal, which needs your tax form and bank details. Fourth, procurement raises a purchase order. I will not sign without a purchase order number on the order form."
+      ],
+      "value": "Security questionnaire, legal review, vendor setup in procurement portal, purchase order"
+    },
+    "Identified_Pain__c": {
+      "quotes": [
+        "Elena Vasquez: The support deadline in March is real and I do not want trucks idle because of a remote access failure."
+      ],
+      "value": "VPN hardware goes out of support in March, causing trucks to be idle during remote access failures"
+    },
+    "Champion__c": {
+      "quotes": [
+        "Priya Raman: Which is why I asked Elena to join. I can recommend, but I cannot commit the company.",
+        "Priya Raman: I will chase Marcus on the questionnaire so it does not sit."
+      ],
+      "value": "Priya Raman, Director of IT Infrastructure"
+    },
+    "Competition__c": {
+      "quotes": [],
+      "value": ""
+    },
+    "CloseDate": {
+      "quotes": [
+        "Elena Vasquez: No, and I want to be direct about that. We will not sign in December. Tom's redlines alone take us past the holidays, and the board meets on January 14. Signature will slip to January, realistically the week after that board meeting."
+      ],
+      "value": "The week after the January 14 board meeting"
+    }
+  }
+}

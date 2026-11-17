@@ -1,0 +1,15 @@
+{
+  "_how_to_label": "Taha labels this by hand. For each field put \"expect\" if a good proposal should include it for this call, or \"blank\" if the call does not support it. \"unlabelled\" means not decided yet.",
+  "current": {},
+  "fields": {
+    "Metrics__c": "expect",
+    "Economic_Buyer__c": "blank",
+    "Decision_Criteria__c": "expect",
+    "Decision_Process__c": "blank",
+    "Paper_Process__c": "blank",
+    "Identified_Pain__c": "expect",
+    "Champion__c": "expect",
+    "Competition__c": "expect",
+    "CloseDate": "blank"
+  }
+}

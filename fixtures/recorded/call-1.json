@@ -1,0 +1,66 @@
+{
+  "transcriptId": "call-1",
+  "transcriptHash": "b320a5c8e08e53c393924019d516cff4e696b1b18221d3ceb280708a862d3d12",
+  "contextHash": "157c21d2bdb731149af0b12f17ac4d69a30bf145f440f757ee29b85a416fb936",
+  "modelId": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+  "recordedAt": "2026-11-17T06:40:54.047Z",
+  "output": {
+    "Metrics__c": {
+      "quotes": [
+        "Priya Raman: We had three VPN outages last quarter, and each one lasted about four hours.",
+        "Marcus Hale: And it is not only the outages. The helpdesk gets about 400 VPN tickets a month.",
+        "Priya Raman: I want VPN tickets down by 70 percent. And contractor onboarding takes five days today, because we have to ship a laptop profile and open firewall rules by hand. I want that under one day."
+      ],
+      "value": "Three VPN outages last quarter, each lasting about four hours, 400 VPN tickets a month, wants VPN tickets down by 70 percent, and contractor onboarding under one day"
+    },
+    "Economic_Buyer__c": {
+      "quotes": [
+        "Priya Raman: The budget sits above me."
+      ],
+      "value": ""
+    },
+    "Decision_Criteria__c": {
+      "quotes": [
+        "Marcus Hale: It has to work with our existing single sign-on, we are not running a second directory. Contractors must get access per application, not to the whole network. And I need a current SOC 2 report before anything touches production.",
+        "Priya Raman: I will add one. No hardware in the depots. We have nobody on site to rack a box, so if it needs an appliance in forty locations it is out."
+      ],
+      "value": "Must work with existing single sign-on, give contractors access per application, have a current SOC 2 report, and no hardware in the depots"
+    },
+    "Decision_Process__c": {
+      "quotes": [
+        "Priya Raman: We would probably want to try it somewhere first. I have not thought about where or for how long.",
+        "Priya Raman: I am running the evaluation, and I want this fixed before March. I have already told Marcus we need to move, and I will take the proposal to our finance leadership myself once I have numbers I can defend."
+      ],
+      "value": "Want to try it somewhere first, Priya Raman is running the evaluation and will take the proposal to finance leadership"
+    },
+    "Paper_Process__c": {
+      "quotes": [],
+      "value": ""
+    },
+    "Identified_Pain__c": {
+      "quotes": [
+        "Priya Raman: Dispatchers are locked out of the routing system, so trucks sit idle in the yard until we are back up. Operations calls me directly when that happens.",
+        "Marcus Hale: Correct. I am not carrying unpatched remote access into an audit.",
+        "Priya Raman: The VPN hardware goes out of support in March. After that we get no security patches, and Marcus will not sign off on running it."
+      ],
+      "value": "VPN outages cause dispatchers to be locked out and trucks to sit idle, and VPN hardware goes out of support in March"
+    },
+    "Champion__c": {
+      "quotes": [
+        "Priya Raman: I am running the evaluation, and I want this fixed before March. I have already told Marcus we need to move, and I will take the proposal to our finance leadership myself once I have numbers I can defend.",
+        "Marcus Hale: She has been pushing this for two months. I am on board as long as my list is met."
+      ],
+      "value": "Priya Raman, Director of IT Infrastructure, is running the evaluation and will take the proposal to finance leadership"
+    },
+    "Competition__c": {
+      "quotes": [
+        "Priya Raman: Renewing the existing VPN contract is the default if we do nothing. We are also looking at one other vendor, and I would rather not say who."
+      ],
+      "value": "Renewing the existing VPN contract and one other unnamed vendor"
+    },
+    "CloseDate": {
+      "quotes": [],
+      "value": ""
+    }
+  }
+}

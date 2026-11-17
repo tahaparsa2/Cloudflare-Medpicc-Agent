@@ -1,0 +1,15 @@
+{
+  "account": {
+    "Name": "Tessaline Freight",
+    "Industry": "Transportation",
+    "NumberOfEmployees": 1800,
+    "Description": "Synthetic account for the MEDDPICC demo. Not a real company."
+  },
+  "opportunity": {
+    "Name": "Tessaline Freight - New Business",
+    "StageName": "Qualification",
+    "CloseDate": "2026-12-18",
+    "Amount": 84000,
+    "Description": "Synthetic opportunity for the MEDDPICC demo. Not a real deal."
+  }
+}

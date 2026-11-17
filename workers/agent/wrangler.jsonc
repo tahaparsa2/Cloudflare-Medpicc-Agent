@@ -1,0 +1,44 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Worker A: the agent, the review page and (milestone 4) the MCP server.
+  // It holds no Salesforce secret. Its only route to Salesforce is the
+  // gatekeeper binding below.
+  "name": "meddpicc-agent",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"], // required by the Agents SDK
+
+  // The workers.dev address is on, and Cloudflare Access sits in front of it.
+  // The Worker also checks for itself: it serves nothing to a caller the
+  // gatekeeper cannot name, so without Access every request gets 403.
+  "workers_dev": true,
+  "preview_urls": false,
+
+  // One agent instance per opportunity, each with its own SQLite.
+  "durable_objects": {
+    "bindings": [{ "name": "OpportunityAgent", "class_name": "OpportunityAgent" }]
+  },
+  "migrations": [{ "tag": "v0", "new_sqlite_classes": ["OpportunityAgent"] }],
+
+  "services": [{ "binding": "GATEKEEPER_SALESFORCE", "service": "meddpicc-gatekeeper" }],
+
+  // Workers AI, always called through AI Gateway so every call is logged there.
+  // The gateway named "default" is created on first use.
+  "ai": { "binding": "AI" },
+  "vars": {
+    "MODEL_ID": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "AI_GATEWAY_ID": "default",
+    // "live" calls the model. "replay" uses the answers saved in fixtures/recorded/
+    // and spends none of the daily free allocation. Override in .dev.vars.
+    "MODEL_MODE": "live"
+  },
+
+  // The review and audit pages. The Worker runs first on every request, so
+  // even a static file is only served to a caller the gatekeeper can name.
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+
+  // Bundle the context file as text.
+  "rules": [{ "type": "Text", "globs": ["**/*.md"], "fallthrough": true }],
+
+  "observability": { "enabled": true }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_Process__c</fullName>
+    <label>Decision Process</label>
+    <description>MEDDPICC: Decision Process. Proposed by the MEDDPICC agent from a call transcript, approved by the rep, and written only through the gatekeeper.</description>
+    <length>32768</length>
+    <trackHistory>true</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

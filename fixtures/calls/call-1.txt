@@ -1,0 +1,69 @@
+SYNTHETIC TRANSCRIPT. Every company and person here is invented.
+Call 1: discovery
+Opportunity: Tessaline Freight - New Business
+Date: 2026-11-10
+Participants: Maya Chen (Halden Networks, Account Executive); Priya Raman (Tessaline Freight, Director of IT Infrastructure); Marcus Hale (Tessaline Freight, Security Lead)
+
+Maya Chen: Thanks for making the time, both of you. Priya, when we spoke briefly last week you said remote access had become a problem. Can you tell me what is going on?
+
+Priya Raman: Sure. We run about forty depots, and every dispatcher and every contractor gets into our systems through one VPN. It is old and it falls over. We had three VPN outages last quarter, and each one lasted about four hours.
+
+Maya Chen: What happens in the business during those four hours?
+
+Priya Raman: Dispatchers are locked out of the routing system, so trucks sit idle in the yard until we are back up. Operations calls me directly when that happens. It is not a pleasant call.
+
+Marcus Hale: And it is not only the outages. The helpdesk gets about 400 VPN tickets a month. Password resets, clients that will not connect, people who cannot reach one application but can reach everything else.
+
+Maya Chen: Is there a date that makes this urgent, or is it a general frustration?
+
+Priya Raman: There is a date. The VPN hardware goes out of support in March. After that we get no security patches, and Marcus will not sign off on running it.
+
+Marcus Hale: Correct. I am not carrying unpatched remote access into an audit.
+
+Maya Chen: Understood. If this project goes well, what would you point to a year from now and say it worked?
+
+Priya Raman: Two things. I want VPN tickets down by 70 percent. And contractor onboarding takes five days today, because we have to ship a laptop profile and open firewall rules by hand. I want that under one day.
+
+Maya Chen: Those are clear. Let me ask about how you will choose. What does a solution have to do for you to consider it at all?
+
+Marcus Hale: I can give you my list. It has to work with our existing single sign-on, we are not running a second directory. Contractors must get access per application, not to the whole network. And I need a current SOC 2 report before anything touches production.
+
+Priya Raman: I will add one. No hardware in the depots. We have nobody on site to rack a box, so if it needs an appliance in forty locations it is out.
+
+Maya Chen: That is helpful. So single sign-on, per-application access for contractors, a SOC 2 report, and no depot hardware. Anything on price or contract length?
+
+Priya Raman: Not yet. I do not want to guess at that today.
+
+Maya Chen: Fair enough. Who else is involved in a decision like this? Is the budget yours?
+
+Priya Raman: The budget sits above me. I would rather not get into names until I have spoken to people internally.
+
+Maya Chen: No problem. What about you personally, Priya, where do you stand on this?
+
+Priya Raman: I am running the evaluation, and I want this fixed before March. I have already told Marcus we need to move, and I will take the proposal to our finance leadership myself once I have numbers I can defend.
+
+Marcus Hale: She has been pushing this for two months. I am on board as long as my list is met.
+
+Maya Chen: I appreciate that. Are you looking at other options alongside us?
+
+Priya Raman: Renewing the existing VPN contract is the default if we do nothing. We are also looking at one other vendor, and I would rather not say who.
+
+Maya Chen: Understood. And how would you want to evaluate us? Some customers start with a pilot.
+
+Priya Raman: We would probably want to try it somewhere first. I have not thought about where or for how long.
+
+Maya Chen: That is fine, we can shape that together. Let me suggest next steps. I will send a summary today, and I would like to bring a solutions engineer to walk Marcus through the single sign-on integration and get him the SOC 2 report under NDA. Could we do that next week?
+
+Marcus Hale: Next week works. Send the NDA to me directly.
+
+Priya Raman: And send me anything that helps me explain the ticket reduction to finance. I will need that for the conversation I mentioned.
+
+Maya Chen: I will. One last thing, so I do not assume: is there anything that would stop this project from happening at all?
+
+Priya Raman: Only if finance decides to renew the VPN for one more year to avoid the spend. That is the argument I have to win.
+
+Maya Chen: Then let us make sure you have what you need to win it. Thank you both. I will follow up this afternoon.
+
+Priya Raman: Thanks, Maya.
+
+Marcus Hale: Thank you.

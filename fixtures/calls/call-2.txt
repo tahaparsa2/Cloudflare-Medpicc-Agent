@@ -1,0 +1,61 @@
+SYNTHETIC TRANSCRIPT. Every company and person here is invented.
+Call 2: budget and contracting
+Opportunity: Tessaline Freight - New Business
+Date: 2026-11-19
+Participants: Maya Chen (Halden Networks, Account Executive); Priya Raman (Tessaline Freight, Director of IT Infrastructure); Elena Vasquez (Tessaline Freight, Chief Financial Officer)
+
+Maya Chen: Thank you for joining, Elena. Priya told me she has walked you through the proposal. I would like to use the time to understand how a purchase like this gets approved at Tessaline, and what you need from us.
+
+Elena Vasquez: That is the right use of the time. Priya has made the case well. The support deadline in March is real and I do not want trucks idle because of a remote access failure. My questions are about cost and timing.
+
+Maya Chen: Before we get to those, may I ask how the approval works? Who signs?
+
+Elena Vasquez: I do. I sign any contract above 50,000 dollars, and this is above that. The money comes from the infrastructure line in my budget, not from Priya's operating budget.
+
+Priya Raman: Which is why I asked Elena to join. I can recommend, but I cannot commit the company.
+
+Maya Chen: That is clear, thank you. Elena, is there anyone who could overrule a yes from you?
+
+Elena Vasquez: The board sees anything multi-year, but they approve what I bring them. In practice it is my decision.
+
+Maya Chen: Understood. Can you walk me through the paperwork from your side? I want to avoid surprises in the last week.
+
+Elena Vasquez: There are four steps. First, your team completes our security questionnaire. Marcus owns that and he will not start legal review until it is done. Second, the master agreement goes to Tom Brandt, our General Counsel. He takes two to three weeks for redlines, and he does not move faster for anyone.
+
+Maya Chen: Is that on your paper or ours?
+
+Elena Vasquez: Yours is fine as a starting point. Tom will mark it up. Third, you have to be set up as a vendor in our procurement portal, which needs your tax form and bank details. Fourth, procurement raises a purchase order. I will not sign without a purchase order number on the order form.
+
+Maya Chen: So the security questionnaire, legal redlines with Tom Brandt, vendor setup in the procurement portal, then a purchase order, and you sign the order form.
+
+Elena Vasquez: Correct, in that order.
+
+Maya Chen: Thank you. On timing, we had been working toward a signature on December 18. Does that still hold?
+
+Elena Vasquez: No, and I want to be direct about that. We will not sign in December. Tom's redlines alone take us past the holidays, and the board meets on January 14. Signature will slip to January, realistically the week after that board meeting.
+
+Priya Raman: That still leaves us enough time before March, but only just. I would want deployment planning to start before signature.
+
+Maya Chen: We can start planning in parallel at no cost, so the March date is protected. Elena, does a January signature change anything about the budget?
+
+Elena Vasquez: No. The money is approved for this fiscal year, which runs to June. It is a matter of sequence, not of funds.
+
+Maya Chen: Good. What do you need from me to keep the January date from slipping again?
+
+Elena Vasquez: Three things. Return the security questionnaire within a week. Send the master agreement to Tom this week so his clock starts. And give me a single page with the three-year cost, because that is what I will show the board.
+
+Maya Chen: I can do all three. I will send the agreement to Tom Brandt tomorrow and the one-page cost summary by Friday.
+
+Priya Raman: I will chase Marcus on the questionnaire so it does not sit.
+
+Maya Chen: Thank you, Priya. Elena, is there anything about the proposal itself that concerns you?
+
+Elena Vasquez: Only that I have seen projects like this run over. I want the deployment plan to name who at your company is accountable if a depot is not live by the agreed date.
+
+Maya Chen: That is reasonable. I will include a named delivery lead in the plan.
+
+Elena Vasquez: Then I think we understand each other. Send me what you promised and we will keep to January.
+
+Maya Chen: I will. Thank you both for the time.
+
+Priya Raman: Thanks, Maya.

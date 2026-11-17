@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MEDDPICC review</title>
+    <link rel="stylesheet" href="/review.css" />
+  </head>
+  <body>
+    <header class="top">
+      <p class="eyebrow">MEDDPICC review</p>
+      <h1 id="title">Loading the proposal</h1>
+      <p id="subtitle" class="muted"></p>
+    </header>
+    <p id="identity" class="banner" hidden></p>
+    <p id="error" class="error" role="alert" hidden></p>
+    <main id="app" aria-live="polite"></main>
+    <footer class="muted">
+      Nothing on this page writes to Salesforce directly. Each decision goes to the gatekeeper,
+      which checks the policy, the approval and the current Salesforce value before it writes.
+    </footer>
+    <script src="/review.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Worker B: the gatekeeper. The only holder of the Salesforce credential.
+  "name": "meddpicc-gatekeeper",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"], // node:crypto, for synchronous hashing
+
+  // No public route. Reached only through the agent Worker's service binding.
+  "workers_dev": false,
+  "preview_urls": false,
+
+  // One singleton Durable Object holds the hash-chained audit log in SQLite.
+  "durable_objects": {
+    "bindings": [{ "name": "GATEKEEPER", "class_name": "SalesforceGatekeeper" }]
+  },
+  "migrations": [{ "tag": "v0", "new_sqlite_classes": ["SalesforceGatekeeper"] }],
+
+  // Set with `wrangler secret put` when deployed, and in .dev.vars locally.
+  // Values never go in this file.
+  "secrets": {
+    "required": ["SF_LOGIN_URL", "SF_CONSUMER_KEY", "SF_CONSUMER_SECRET"]
+  },
+
+  "vars": {
+    "SF_API_VERSION": "v68.0",
+    // Local development only: set it in .dev.vars. Left empty here, so a
+    // deployed gatekeeper refuses the dev identity.
+    "DEV_IDENTITY": ""
+  },
+
+  // Cloudflare Access sits in front of the agent Worker. To verify its tokens
+  // the gatekeeper needs two more values, set with `wrangler secret put`:
+  //   TEAM_DOMAIN   https://<team-name>.cloudflareaccess.com
+  //   POLICY_AUD    the Access application's AUD tag
+  // They are not secrets, but they name the account's Zero Trust team, so they
+  // stay out of this file. Until both are set, no Access token is accepted.
+
+
+  "observability": { "enabled": true }
+}

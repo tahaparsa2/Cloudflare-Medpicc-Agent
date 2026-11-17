@@ -1,0 +1,7 @@
+{
+  "packageDirectories": [{ "path": "salesforce", "default": true }],
+  "name": "meddpicc-demo",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "68.0"
+}

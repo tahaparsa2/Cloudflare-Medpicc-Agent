@@ -1,0 +1,13 @@
+# Copy this file to .dev.vars (same folder: workers/gatekeeper/) and fill in the values yourself.
+# .dev.vars is git-ignored. Do not paste real values into this example file.
+
+# Your org's My Domain URL, e.g. https://your-domain-dev-ed.develop.my.salesforce.com
+SF_LOGIN_URL=
+
+# From the External Client App (client credentials flow)
+SF_CONSUMER_KEY=
+SF_CONSUMER_SECRET=
+
+# Local stand-in for a signed-in rep until Cloudflare Access is on (milestone 4).
+# Shows in the audit log as "dev:<this value>". Not a secret. Never set on a deployed Worker.
+DEV_IDENTITY=dev-rep@example.test

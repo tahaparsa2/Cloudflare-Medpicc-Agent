@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "object": "Opportunity",
+  "description": "What the gatekeeper may write to an Opportunity, and on whose approval. A field named under no rule is denied.",
+  "rules": {
+    "rep_approval": [
+      "Metrics__c",
+      "Economic_Buyer__c",
+      "Decision_Criteria__c",
+      "Decision_Process__c",
+      "Paper_Process__c",
+      "Identified_Pain__c",
+      "Champion__c",
+      "Competition__c"
+    ],
+    "manager_approval": [
+      "CloseDate",
+      "Amount",
+      "StageName",
+      "ForecastCategoryName"
+    ]
+  },
+  "read_only": ["Name", "Account.Name"],
+  "default": "deny"
+}

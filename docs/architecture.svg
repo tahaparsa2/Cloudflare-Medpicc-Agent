@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="t">Architecture: two Cloudflare Workers and one Salesforce org</title>
+  <desc id="d">A call-ended event and the rep's browser reach Worker A, the agent. Worker A makes one model call through AI Gateway to Workers AI, and reaches Salesforce only through a service binding to Worker B, the gatekeeper. Worker B holds the Salesforce credential, evaluates the policy file, stores approvals and the hash-chained audit log, and writes to Salesforce.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4a4741"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a867e"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="640" rx="14" fill="#f6f5f2"/>
+
+  <!-- Cloudflare boundary -->
+  <rect x="276" y="22" width="756" height="596" rx="14" fill="none" stroke="#b4500f" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="296" y="606" font-size="13" font-weight="600" fill="#b4500f">Cloudflare</text>
+
+  <!-- Left column: who starts things -->
+  <g>
+    <rect x="24" y="150" width="200" height="96" rx="10" fill="#ffffff" stroke="#cfcbc2"/>
+    <text x="40" y="178" font-size="15" font-weight="700" fill="#1d1c1a">Rep's browser</text>
+    <text x="40" y="200" font-size="13" fill="#4a4741">Review page: approve,</text>
+    <text x="40" y="218" font-size="13" fill="#4a4741">edit, reject. Audit view.</text>
+
+    <rect x="24" y="306" width="200" height="78" rx="10" fill="#ffffff" stroke="#cfcbc2"/>
+    <text x="40" y="334" font-size="15" font-weight="700" fill="#1d1c1a">Call ended</text>
+    <text x="40" y="356" font-size="13" fill="#4a4741">POST /calls: opportunity</text>
+    <text x="40" y="374" font-size="13" fill="#4a4741">id and transcript id</text>
+
+    <rect x="24" y="444" width="200" height="78" rx="10" fill="#ffffff" stroke="#8a867e" stroke-dasharray="5 4"/>
+    <text x="40" y="472" font-size="15" font-weight="700" fill="#1d1c1a">MCP client</text>
+    <text x="40" y="494" font-size="13" fill="#4a4741">Claude Code. Can ask,</text>
+    <text x="40" y="512" font-size="13" fill="#4a4741">can never approve.</text>
+  </g>
+
+  <!-- Access -->
+  <rect x="290" y="150" width="34" height="96" rx="8" fill="#fdf3d7" stroke="#c9a227"/>
+  <text transform="translate(312 198) rotate(-90)" text-anchor="middle" font-size="12" font-weight="600" fill="#6b4e00">Access</text>
+
+  <!-- Worker A -->
+  <g>
+    <rect x="356" y="128" width="296" height="412" rx="12" fill="#ffffff" stroke="#1d1c1a" stroke-width="1.5"/>
+    <text x="376" y="158" font-size="12" font-weight="600" fill="#b4500f" letter-spacing="0.6">WORKER A</text>
+    <text x="376" y="182" font-size="18" font-weight="700" fill="#1d1c1a">The agent</text>
+    <text x="376" y="202" font-size="13" fill="#6b6862">meddpicc-agent</text>
+
+    <rect x="376" y="220" width="256" height="216" rx="8" fill="#f3f1ec" stroke="#e2dfd8"/>
+    <text x="390" y="244" font-size="13" font-weight="700" fill="#1d1c1a">OpportunityAgent</text>
+    <text x="390" y="262" font-size="12" fill="#6b6862">Durable Object, one per opportunity</text>
+    <text x="390" y="290" font-size="13" fill="#1d1c1a">1. Reads the opportunity</text>
+    <text x="390" y="312" font-size="13" fill="#1d1c1a">2. One model call</text>
+    <text x="390" y="334" font-size="13" fill="#1d1c1a">3. Schema check, quote check,</text>
+    <text x="406" y="352" font-size="13" fill="#1d1c1a">empty-fields-only rule (code)</text>
+    <text x="390" y="374" font-size="13" fill="#1d1c1a">4. Close date changed? Ask the</text>
+    <text x="406" y="392" font-size="13" fill="#1d1c1a">gatekeeper, show its refusal</text>
+    <text x="390" y="414" font-size="13" fill="#1d1c1a">5. Holds the proposal's state</text>
+
+    <text x="376" y="462" font-size="13" fill="#4a4741">Serves the review page and audit view.</text>
+    <text x="376" y="482" font-size="13" fill="#4a4741">Reads context/meddpicc.md.</text>
+    <rect x="376" y="498" width="256" height="28" rx="6" fill="#f9e9e7"/>
+    <text x="504" y="517" text-anchor="middle" font-size="13" font-weight="600" fill="#a12a2a">Holds no Salesforce secret</text>
+  </g>
+
+  <!-- Model -->
+  <g>
+    <rect x="376" y="40" width="256" height="56" rx="10" fill="#ffffff" stroke="#cfcbc2"/>
+    <text x="504" y="64" text-anchor="middle" font-size="14" font-weight="700" fill="#1d1c1a">AI Gateway → Workers AI</text>
+    <text x="504" y="84" text-anchor="middle" font-size="12" fill="#6b6862">the only place a model runs</text>
+    <path d="M504 128 L504 100" stroke="#4a4741" stroke-width="1.5" fill="none" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  </g>
+
+  <!-- Worker B -->
+  <g>
+    <rect x="720" y="128" width="296" height="412" rx="12" fill="#ffffff" stroke="#1d1c1a" stroke-width="1.5"/>
+    <text x="740" y="158" font-size="12" font-weight="600" fill="#b4500f" letter-spacing="0.6">WORKER B</text>
+    <text x="740" y="182" font-size="18" font-weight="700" fill="#1d1c1a">The gatekeeper</text>
+    <text x="740" y="202" font-size="13" fill="#6b6862">meddpicc-gatekeeper · no public route</text>
+
+    <rect x="740" y="220" width="256" height="216" rx="8" fill="#f3f1ec" stroke="#e2dfd8"/>
+    <text x="754" y="244" font-size="13" font-weight="700" fill="#1d1c1a">SalesforceGatekeeper</text>
+    <text x="754" y="262" font-size="12" fill="#6b6862">Durable Object, one for the org</text>
+    <text x="754" y="290" font-size="13" fill="#1d1c1a">Policy file → allow or refuse,</text>
+    <text x="754" y="308" font-size="13" fill="#1d1c1a">in code, no model</text>
+    <text x="754" y="334" font-size="13" fill="#1d1c1a">Approvals, only from a person</text>
+    <text x="754" y="360" font-size="13" fill="#1d1c1a">Stale check against its own</text>
+    <text x="754" y="378" font-size="13" fill="#1d1c1a">snapshot of Salesforce</text>
+    <text x="754" y="404" font-size="13" fill="#1d1c1a">Audit log: append-only,</text>
+    <text x="754" y="422" font-size="13" fill="#1d1c1a">each row hashes the one before</text>
+
+    <text x="740" y="462" font-size="13" fill="#4a4741">Reads policy/opportunity.json.</text>
+    <text x="740" y="482" font-size="13" fill="#4a4741">Verifies who is signed in.</text>
+    <rect x="740" y="498" width="256" height="28" rx="6" fill="#e7f4ec"/>
+    <text x="868" y="517" text-anchor="middle" font-size="13" font-weight="600" fill="#1f7a4d">Only holder of the Salesforce secret</text>
+  </g>
+
+  <!-- Salesforce -->
+  <g>
+    <rect x="1076" y="238" width="180" height="180" rx="12" fill="#ffffff" stroke="#1d1c1a" stroke-width="1.5"/>
+    <text x="1094" y="268" font-size="18" font-weight="700" fill="#1d1c1a">Salesforce</text>
+    <text x="1094" y="296" font-size="13" fill="#4a4741">Opportunity with</text>
+    <text x="1094" y="314" font-size="13" fill="#4a4741">eight MEDDPICC fields</text>
+    <text x="1094" y="342" font-size="13" fill="#4a4741">Integration user</text>
+    <text x="1094" y="370" font-size="13" fill="#4a4741">Field history shows</text>
+    <text x="1094" y="388" font-size="13" fill="#4a4741">each change</text>
+  </g>
+
+  <!-- Arrows in -->
+  <path d="M224 198 L286 198" stroke="#4a4741" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M324 198 L352 198" stroke="#4a4741" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M224 345 L352 345" stroke="#4a4741" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M224 483 L352 483" stroke="#8a867e" stroke-width="1.5" stroke-dasharray="5 4" fill="none" marker-end="url(#arrow-muted)"/>
+
+  <!-- A to B -->
+  <path d="M652 334 L716 334" stroke="#4a4741" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="686" y="100" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1c1a">service binding</text>
+  <text x="686" y="116" text-anchor="middle" font-size="12" fill="#6b6862">the only route</text>
+  <path d="M686 122 L686 326" stroke="#8a867e" stroke-width="1" stroke-dasharray="2 3" fill="none"/>
+
+  <!-- B to Salesforce -->
+  <path d="M1016 328 L1072 328" stroke="#4a4741" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="1166" y="208" text-anchor="middle" font-size="12" font-weight="600" fill="#1d1c1a">OAuth client credentials</text>
+  <text x="1166" y="224" text-anchor="middle" font-size="12" fill="#6b6862">REST API, as the integration user</text>
+
+  <!-- Legend -->
+  <text x="296" y="582" font-size="12" fill="#6b6862">Dashed boxes: Access protects the deployed Worker (a labelled dev identity stands in locally). The MCP server is planned.</text>
+</svg>
